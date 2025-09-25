@@ -2,90 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ashish Kushwaha | Portfolio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f9;
-      margin: 0;
-      padding: 0;
+    :root{
+      --bg:#0f1116; --card:#171922; --text:#e6e7eb; --muted:#a6adbb; --link:#69a7ff; --accent:#7bd389;
     }
-    header {
-      background: #2c3e50;
-      color: #fff;
-      padding: 40px 0;
-      text-align: center;
-    }
-    section {
-      padding: 40px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h1, h2 {
-      color: #2c3e50;
-    }
-    .skills, .projects {
-      list-style: none;
-      padding: 0;
-    }
-    .skills li, .projects li {
-      margin-bottom: 10px;
-    }
-    footer {
-      background: #2c3e50;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    a {
-      color: #3498db;
-      text-decoration: none;
+    *{box-sizing:border-box}
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial; background:var(--bg); color:var(--text)}
+    a{color:var(--link); text-decoration:none}
+    a:hover{opacity:.9; text-decoration:underline}
+    .wrap{display:grid; grid-template-columns:280px 1fr; min-height:100vh}
+    /* sidebar */
+    aside{background:#0b0d12; border-right:1px solid #1e2230; padding:28px 22px; position:sticky; top:0; height:100vh}
+    .avatar{width:120px; height:120px; border-radius:50%; object-fit:cover; border:2px solid #2b3246; display:block; margin:0 auto 16px}
+    .name{font-size:1.4rem; text-align:center; margin:6px 0 2px}
+    .title{color:var(--muted); text-align:center; font-size:.92rem; margin:0 0 16px}
+    nav a{display:block; padding:10px 12px; border-radius:10px; color:var(--text)}
+    nav a:hover, nav a.active{background:#151826}
+    .social{margin-top:12px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap}
+    .chip{background:#151826; border:1px solid #23283a; color:var(--muted); padding:6px 10px; border-radius:999px; font-size:.82rem}
+    /* main */
+    main{padding:36px 32px}
+    section{background:var(--card); border:1px solid #23283a; border-radius:16px; padding:22px; margin:0 0 18px; box-shadow:0 1px 0 #0b0d12}
+    h2{margin:0 0 12px; font-size:1.2rem}
+    p{margin:10px 0; color:#d9dbe3}
+    ul{margin:8px 0 0 18px}
+    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    .badge{display:inline-block; background:#1b2030; border:1px solid #2a3148; color:#cfd4e6; padding:6px 10px; border-radius:10px; margin:4px 6px 0 0; font-size:.85rem}
+    .news li{margin-bottom:8px}
+    footer{color:var(--muted); text-align:center; padding:18px}
+    /* responsive */
+    @media (max-width: 880px){
+      .wrap{grid-template-columns:1fr}
+      aside{position:static; height:auto; border-right:none; border-bottom:1px solid #1e2230}
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Ashish Kushwaha</h1>
-    <p>BI Analyst | Data Science Enthusiast | SQL, Python, ML</p>
-  </header>
-
-  <section>
-    <h2>About Me</h2>
-    <p>I am a BI Analyst with hands-on experience in SQL, Tableau, Power BI, and Python. 
-    I am passionate about transforming raw data into actionable insights and building data-driven solutions to solve real-world problems.</p>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <ul class="skills">
-      <li>SQL & Database Management</li>
-      <li>Python & Machine Learning</li>
-      <li>Tableau & Power BI</li>
-      <li>Data Visualization & Analytics</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <ul class="projects">
-      <li><strong>Credit Risk Analytics:</strong> Predicted bad customers using ML models — <a href="#">View on GitHub</a></li>
-      <li><strong>Sales Analysis:</strong> Analyzed cellphone sales data with SQL — <a href="#">View on GitHub</a></li>
-      <li><strong>Dashboard Design:</strong> Built interactive dashboards with Tableau — <a href="#">View on GitHub</a></li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:kushwahaashish26@gmail.com">kushwahaashish26@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-    <p>GitHub: <a href="https://github.com/Ashish5991" target="_blank">github.com/Ashish5991</a></p>
-  </section>
-
-  <footer>
-    <p>© 2025 Ashish Kushwaha. All Rights Reserved.</p>
-  </footer>
-</body>
-</html>
-
+  <div class="wrap">
+    <aside>
+      <!-- Replace profile.jpg with your uploaded photo file -->
+      <img src="profile.jpg" alt="Ashish Kushwaha" class="avatar" />
+      <div class="name">Ashish Kushwaha</div>
+      <div class="title">BI Analyst • Applied Data Science</div>
+      <nav>
+        <a href="#about" class="active">About</a>
+        <a href="#interests">Research/Interests</a>
+        <a href="#projects">Projects</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="social" style="margin-top:14px">
+        <a class="chip" href="mailto:kushwahaashish26@gmail.com">Email</a>
+        <a class="chip" href="https://github.com/Ashish5991" target="_blank">GitHub</a>
+        <a class="chip" href="ht
