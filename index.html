@@ -7,8 +7,13 @@
   <meta name="description" content="Portfolio of Ashish Kushwaha — BI Analyst and Applied Data Science." />
   <style>
     :root{
-      --bg:#0f1116; --card:#171922; --text:#e6e7eb; --muted:#a6adbb;
-      --link:#69a7ff; --accent:#7bd389; --border:#23283a;
+      --bg:#0f0f12;        /* page background (near-black) */
+      --card:#14161d;      /* cards */
+      --text:#0f0f12;      /* default text on light areas */
+      --muted:#494c57;     /* muted text on dark */
+      --link:#0047ff;      /* link blue */
+      --accent:#ffd200;    /* main yellow */
+      --border:#242733;    /* borders on dark */
     }
     *{box-sizing:border-box}
     html,body{margin:0; padding:0; background:var(--bg); color:var(--text);
@@ -17,24 +22,28 @@
     a:hover{opacity:.95; text-decoration:underline}
     .container{max-width:980px; margin:0 auto; padding:28px 20px}
     /* HERO */
-    .hero{display:flex; gap:22px; align-items:center; background:var(--card);
-      border:1px solid var(--border); border-radius:18px; padding:24px;
-      box-shadow:0 1px 0 #0b0d12}
-    .avatar{
-      width:180px; height:180px; border-radius:50%; object-fit:cover;
-      border:2px solid #2b3246; image-rendering:-webkit-optimize-contrast;
-      display:block; flex:0 0 auto; box-shadow:0 0 10px rgba(0,0,0,.4)
-    }
-    .hero h1{margin:0 0 6px; font-size:2rem}
-    .subtitle{color:var(--muted); margin:4px 0 14px}
-    .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
-    .chip{background:#151826; border:1px solid var(--border); color:#cfd4e6;
-      padding:8px 12px; border-radius:999px; font-size:.9rem}
-    .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:14px}
-    .btn{border-radius:12px; padding:10px 14px; border:1px solid var(--border);
-      background:#141826; color:var(--text); text-decoration:none; display:inline-block}
-    .btn.primary{background:var(--accent); color:#0b0d12; border-color:#4fb06c}
-    .btn:hover{opacity:.95}
+   /* Yellow hero like the slide */
+.hero{
+  background: var(--accent);
+  border: 1px solid #e3b800;
+  color: #0f0f12;                     /* dark text in hero */
+}
+.hero h1, .hero .subtitle, .hero p { color:#0f0f12; }
+.hero .chip{                          /* chips visible on yellow */
+  background:#0f0f12;
+  border-color:#0f0f12;
+  color:#ffd200;
+}
+.hero .btn{                           /* buttons on yellow */
+  background:#0f0f12;
+  border-color:#0f0f12;
+  color:#ffd200;
+}
+.hero .btn.primary{                   /* primary stands out */
+  background:#111723;                 /* deep navy/black */
+  color:#ffd200;
+  border-color:#111723;
+}
     /* SECTIONS */
     section{margin-top:20px}
     .card{background:var(--card); border:1px solid var(--border);
