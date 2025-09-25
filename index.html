@@ -37,10 +37,18 @@
     .hero h1,.hero .subtitle,.hero p{color:#0f0f12}
 
     .avatar{
-      width:180px; height:180px; border-radius:50%; object-fit:cover;
-      border:2px solid #2b3246; image-rendering:-webkit-optimize-contrast;
-      display:block; flex:0 0 auto; box-shadow:0 0 10px rgba(0,0,0,.4)
+      width:200px;                /* slightly larger to reduce blur */
+      height:200px;               /* match width */
+      border-radius:50%;
+      object-fit:cover;
+      object-position: 50% 20%;   /* 👈 shifts image down (try 20%-30%) */
+      border:2px solid #2b3246;
+      image-rendering:-webkit-optimize-contrast;
+      display:block;
+      flex:0 0 auto;
+      box-shadow:0 0 10px rgba(0,0,0,.4);
     }
+
     .subtitle{margin:4px 0 14px}
 
     .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
@@ -89,7 +97,7 @@
   <div class="container">
     <!-- HERO -->
     <header class="hero">
-      <img src="profile.jpg" alt="Ashish Kushwaha" class="avatar" />
+      <img src="image.jpg" alt="Ashish Kushwaha" class="avatar" />
       <div>
         <h1>Ashish Kushwaha</h1>
         <div class="subtitle">BI Analyst • Applied Data Science</div>
