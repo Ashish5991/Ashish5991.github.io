@@ -7,16 +7,15 @@
   <meta name="description" content="Portfolio of Ashish Kushwaha — BI Analyst and Applied Data Science." />
   <style>
     :root{
-      /* RIMBERIO-style palette */
-      --bg:#0f0f12;        /* page background (near-black) */
-      --card:#14161d;      /* cards (dark) */
-      --text:#0f0f12;      /* default text for light areas */
-      --muted:#494c57;     /* muted text on dark */
+      --bg:#ffffff;        /* page background now white */
+      --card:#f8f9fb;      /* light card background */
+      --text:#0f0f12;      /* main text black/dark */
+      --muted:#4a4a4a;     /* muted grey text */
       --link:#0047ff;      /* link blue */
-      --accent:#ffd200;    /* main yellow */
-      --border:#242733;    /* borders on dark */
+      --accent:#ffd200;    /* keep the yellow accent */
+      --border:#dcdcdc;    /* light grey borders */
     }
-
+    
     *{box-sizing:border-box}
     html,body{
       margin:0; padding:0; background:var(--bg); color:var(--text);
@@ -62,12 +61,15 @@
     /* -------- SECTIONS -------- */
     section{margin-top:20px}
     .card{
-      background:var(--card); border:1px solid var(--border);
-      border-radius:18px; padding:22px; box-shadow:0 1px 0 #0b0d12
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:22px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08); /* lighter shadow */
     }
     h2{margin:0 0 12px; font-size:1.35rem; border-bottom:3px solid var(--accent); padding-bottom:6px}
     /* readable text on dark cards */
-    .card h2, .card p, .card li { color:#e6e7eb }
+    .card h2, .card p, .card li { color:var(--text) }
     p{line-height:1.6}
     ul{margin:8px 0 0 18px}
     .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
