@@ -7,55 +7,75 @@
   <meta name="description" content="Portfolio of Ashish Kushwaha — BI Analyst and Applied Data Science." />
   <style>
     :root{
+      /* RIMBERIO-style palette */
       --bg:#0f0f12;        /* page background (near-black) */
-      --card:#14161d;      /* cards */
-      --text:#0f0f12;      /* default text on light areas */
+      --card:#14161d;      /* cards (dark) */
+      --text:#0f0f12;      /* default text for light areas */
       --muted:#494c57;     /* muted text on dark */
       --link:#0047ff;      /* link blue */
       --accent:#ffd200;    /* main yellow */
       --border:#242733;    /* borders on dark */
     }
+
     *{box-sizing:border-box}
-    html,body{margin:0; padding:0; background:var(--bg); color:var(--text);
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    html,body{
+      margin:0; padding:0; background:var(--bg); color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial
+    }
     a{color:var(--link); text-decoration:none}
     a:hover{opacity:.95; text-decoration:underline}
     .container{max-width:980px; margin:0 auto; padding:28px 20px}
-    /* HERO */
-   /* Yellow hero like the slide */
-.hero{
-  background: var(--accent);
-  border: 1px solid #e3b800;
-  color: #0f0f12;                     /* dark text in hero */
-}
-.hero h1, .hero .subtitle, .hero p { color:#0f0f12; }
-.hero .chip{                          /* chips visible on yellow */
-  background:#0f0f12;
-  border-color:#0f0f12;
-  color:#ffd200;
-}
-.hero .btn{                           /* buttons on yellow */
-  background:#0f0f12;
-  border-color:#0f0f12;
-  color:#ffd200;
-}
-.hero .btn.primary{                   /* primary stands out */
-  background:#111723;                 /* deep navy/black */
-  color:#ffd200;
-  border-color:#111723;
-}
-    /* SECTIONS */
+
+    /* -------- HERO (yellow banner) -------- */
+    .hero{
+      display:flex; gap:22px; align-items:center;
+      background:var(--accent);
+      border:1px solid #e3b800;
+      color:#0f0f12;                 /* dark text in hero */
+      border-radius:18px; padding:24px;
+      box-shadow:0 1px 0 #0b0d12;
+    }
+    .hero h1,.hero .subtitle,.hero p{color:#0f0f12}
+
+    .avatar{
+      width:180px; height:180px; border-radius:50%; object-fit:cover;
+      border:2px solid #2b3246; image-rendering:-webkit-optimize-contrast;
+      display:block; flex:0 0 auto; box-shadow:0 0 10px rgba(0,0,0,.4)
+    }
+    .subtitle{margin:4px 0 14px}
+
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    .chip{
+      background:#0f0f12; border:1px solid #0f0f12; color:#ffd200;
+      padding:8px 12px; border-radius:999px; font-size:.9rem
+    }
+
+    .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:14px}
+    .btn{
+      border-radius:12px; padding:10px 14px; border:1px solid var(--border);
+      background:#141826; color:#e6e7eb; text-decoration:none; display:inline-block
+    }
+    .hero .btn{background:#0f0f12; border-color:#0f0f12; color:#ffd200}
+    .btn.primary{background:#111723; color:#ffd200; border-color:#111723}
+    .btn:hover{opacity:.95}
+
+    /* -------- SECTIONS -------- */
     section{margin-top:20px}
-    .card{background:var(--card); border:1px solid var(--border);
-      border-radius:18px; padding:22px; box-shadow:0 1px 0 #0b0d12}
-    h2{margin:0 0 12px; font-size:1.35rem}
-    p{line-height:1.6; color:#d9dbe3}
+    .card{
+      background:var(--card); border:1px solid var(--border);
+      border-radius:18px; padding:22px; box-shadow:0 1px 0 #0b0d12
+    }
+    h2{margin:0 0 12px; font-size:1.35rem; border-bottom:3px solid var(--accent); padding-bottom:6px}
+    /* readable text on dark cards */
+    .card h2, .card p, .card li { color:#e6e7eb }
+    p{line-height:1.6}
     ul{margin:8px 0 0 18px}
     .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
     .proj h3{margin:0 0 6px}
     .muted{color:var(--muted)}
     footer{color:var(--muted); text-align:center; padding:30px 10px}
-    /* RESPONSIVE */
+
+    /* -------- RESPONSIVE -------- */
     @media (max-width: 900px){
       .hero{flex-direction:column; text-align:center}
       .grid-2{grid-template-columns:1fr}
@@ -78,21 +98,24 @@
         </p>
 
         <div class="chips">
-          <span class="chip">SQL</span><span class="chip">Python</span>
-          <span class="chip">Pandas</span><span class="chip">Tableau</span>
-          <span class="chip">Power BI</span><span class="chip">Machine Learning</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Python</span>
+          <span class="chip">Pandas</span>
+          <span class="chip">Tableau</span>
+          <span class="chip">Power BI</span>
+          <span class="chip">Machine Learning</span>
         </div>
 
         <div class="cta">
           <a class="btn primary" href="Ashish_Resume.pdf" download>⬇︎ Download Résumé</a>
           <a class="btn" href="mailto:kushwahaashish26@gmail.com">Email</a>
           <a class="btn" href="https://github.com/Ashish5991" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://www.linkedin.com/in/aashishkushwaha/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </header>
 
-    <!-- SCROLLING SECTIONS (stacked vertically) -->
+    <!-- SCROLLING SECTIONS -->
     <section>
       <div class="card">
         <h2>About</h2>
@@ -171,7 +194,7 @@
         <h2>Contact</h2>
         <p>📧 <a href="mailto:ashishkushwahasyr@gmail.com">ashishkushwahasyr@gmail.com</a></p>
         <p>🔗 <a href="https://github.com/Ashish5991" target="_blank" rel="noopener">GitHub</a> ·
-               <a href="https://https://www.linkedin.com/in/aashishkushwaha/" target="_blank" rel="noopener">LinkedIn</a></p>
+               <a href="https://www.linkedin.com/in/aashishkushwaha/" target="_blank" rel="noopener">LinkedIn</a></p>
       </div>
     </section>
 
