@@ -4,58 +4,176 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ashish Kushwaha | Portfolio</title>
+  <meta name="description" content="Portfolio of Ashish Kushwaha — BI Analyst and Applied Data Science." />
   <style>
     :root{
-      --bg:#0f1116; --card:#171922; --text:#e6e7eb; --muted:#a6adbb; --link:#69a7ff; --accent:#7bd389;
+      --bg:#0f1116; --card:#171922; --text:#e6e7eb; --muted:#a6adbb; --link:#69a7ff; --accent:#7bd389; --border:#23283a;
     }
     *{box-sizing:border-box}
-    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial; background:var(--bg); color:var(--text)}
+    html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
     a{color:var(--link); text-decoration:none}
-    a:hover{opacity:.9; text-decoration:underline}
-    .wrap{display:grid; grid-template-columns:280px 1fr; min-height:100vh}
-    /* sidebar */
-    aside{background:#0b0d12; border-right:1px solid #1e2230; padding:28px 22px; position:sticky; top:0; height:100vh}
-    .avatar{width:120px; height:120px; border-radius:50%; object-fit:cover; border:2px solid #2b3246; display:block; margin:0 auto 16px}
-    .name{font-size:1.4rem; text-align:center; margin:6px 0 2px}
-    .title{color:var(--muted); text-align:center; font-size:.92rem; margin:0 0 16px}
-    nav a{display:block; padding:10px 12px; border-radius:10px; color:var(--text)}
-    nav a:hover, nav a.active{background:#151826}
-    .social{margin-top:12px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap}
-    .chip{background:#151826; border:1px solid #23283a; color:var(--muted); padding:6px 10px; border-radius:999px; font-size:.82rem}
-    /* main */
-    main{padding:36px 32px}
-    section{background:var(--card); border:1px solid #23283a; border-radius:16px; padding:22px; margin:0 0 18px; box-shadow:0 1px 0 #0b0d12}
-    h2{margin:0 0 12px; font-size:1.2rem}
-    p{margin:10px 0; color:#d9dbe3}
+    a:hover{text-decoration:underline; opacity:.95}
+    .container{max-width:980px; margin:0 auto; padding:28px 20px}
+    /* header card */
+    .hero{display:flex; gap:22px; align-items:center; background:var(--card); border:1px solid var(--border); border-radius:18px; padding:24px; box-shadow:0 1px 0 #0b0d12}
+    .avatar{
+      width:180px; height:180px; border-radius:50%; object-fit:cover;
+      border:2px solid #2b3246; image-rendering:-webkit-optimize-contrast;
+      display:block; flex:0 0 auto; box-shadow:0 0 10px rgba(0,0,0,.4)
+    }
+    .hero h1{margin:0 0 6px; font-size:1.9rem}
+    .subtitle{color:var(--muted); margin:4px 0 14px}
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    .chip{
+      background:#151826; border:1px solid var(--border); color:#cfd4e6;
+      padding:8px 12px; border-radius:999px; font-size:.9rem; display:inline-flex; align-items:center; gap:8px
+    }
+    .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:14px}
+    .btn{
+      border-radius:12px; padding:10px 14px; border:1px solid var(--border);
+      background:#141826; color:var(--text); text-decoration:none; display:inline-block
+    }
+    .btn.primary{background:var(--accent); color:#0b0d12; border-color:#4fb06c}
+    .btn:hover{opacity:.95}
+    /* sections */
+    section{margin-top:20px}
+    .card{
+      background:var(--card); border:1px solid var(--border); border-radius:18px;
+      padding:22px; box-shadow:0 1px 0 #0b0d12
+    }
+    h2{margin:0 0 12px; font-size:1.35rem}
+    p{line-height:1.6; color:#d9dbe3}
     ul{margin:8px 0 0 18px}
     .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
-    .badge{display:inline-block; background:#1b2030; border:1px solid #2a3148; color:#cfd4e6; padding:6px 10px; border-radius:10px; margin:4px 6px 0 0; font-size:.85rem}
-    .news li{margin-bottom:8px}
-    footer{color:var(--muted); text-align:center; padding:18px}
+    .proj h3{margin:0 0 6px}
+    .muted{color:var(--muted)}
+    footer{color:var(--muted); text-align:center; padding:30px 10px}
     /* responsive */
-    @media (max-width: 880px){
-      .wrap{grid-template-columns:1fr}
-      aside{position:static; height:auto; border-right:none; border-bottom:1px solid #1e2230}
+    @media (max-width: 900px){
+      .hero{flex-direction:column; text-align:center}
+      .grid-2{grid-template-columns:1fr}
+      .avatar{width:160px; height:160px}
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <aside>
-      <!-- Replace profile.jpg with your uploaded photo file -->
-      <img src="profile.jpg" alt="Ashish Kushwaha" class="avatar" style="width:180px; height:180px; object-fit:cover; image-rendering: -webkit-optimize-contrast;" />
-      <div class="name">Ashish Kushwaha</div>
-      <div class="title">BI Analyst • Applied Data Science</div>
-      <nav>
-        <a href="#about" class="active">About</a>
-        <a href="#interests">Research/Interests</a>
-        <a href="#projects">Projects</a>
-        <a href="#news">News</a>
-        <a href="#publications">Publications</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="social" style="margin-top:14px">
-        <a class="chip" href="mailto:kushwahaashish26@gmail.com">Email</a>
-        <a class="chip" href="https://github.com/Ashish5991" target="_blank">GitHub</a>
-        <a class="chip" href="ht
+  <div class="container">
+    <!-- HERO / HEADER -->
+    <header class="hero">
+      <img src="profile.jpg" alt="Ashish Kushwaha" class="avatar" />
+      <div>
+        <h1>Ashish Kushwaha</h1>
+        <div class="subtitle">BI Analyst • Applied Data Science</div>
+        <p>
+          I’m a BI Analyst with experience in SQL, Python, Tableau, and Power BI. I love turning
+          messy, real-world data into clear stories and actionable decisions. Currently pursuing a
+          Master’s in Applied Data Science and exploring ML for financial analytics and BI.
+        </p>
+
+        <!-- Quick skills -->
+        <div class="chips">
+          <span class="chip">SQL</span>
+          <span class="chip">Python</span>
+          <span class="chip">Pandas</span>
+          <span class="chip">Tableau</span>
+          <span class="chip">Power BI</span>
+          <span class="chip">Machine Learning</span>
+        </div>
+
+        <!-- Actions -->
+        <div class="cta">
+          <a class="btn primary" href="CV.pdf" download>⬇︎ Download Résumé</a>
+          <a class="btn" href="mailto:kushwahaashish26@gmail.com">Email</a>
+          <a class="btn" href="https://github.com/Ashish5991" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- SCROLLING SECTIONS (no tabs, just vertical flow) -->
+    <section>
+      <div class="card">
+        <h2>About</h2>
+        <p>
+          I focus on data storytelling and decision support—building pipelines and dashboards that drive outcomes.
+          Interests include financial analytics, risk modeling, and user-centered BI experiences.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="card">
+        <h2>Research & Interests</h2>
+        <ul>
+          <li>Financial analytics and risk modeling</li>
+          <li>Dashboards, data storytelling, and stakeholder communication</li>
+          <li>Practical ML for business problems</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="card">
+        <h2>Projects</h2>
+        <div class="grid-2">
+          <div class="card proj">
+            <h3>Credit-Risk Analytics</h3>
+            <p>End-to-end logistic regression pipeline to identify risky applicants; feature engineering and ROC/PR evaluation.</p>
+            <p><a href="https://github.com/Ashish5991/Credit-Risk-Analytics" target="_blank" rel="noopener">Repository →</a></p>
+          </div>
+          <div class="card proj">
+            <h3>Sales Insights (SQL)</h3>
+            <p>Exploratory SQL over cellphone sales data: cohort analysis, RFM segments, and margin drivers.</p>
+            <p><a href="https://github.com/Ashish5991/Cellphones-sales-analysis-using-SQL" target="_blank" rel="noopener">Repository →</a></p>
+          </div>
+          <div class="card proj">
+            <h3>Interactive Dashboards</h3>
+            <p>Executive Tableau/Power BI dashboards with KPIs, drill-downs, and data quality checks.</p>
+            <p><a href="#" target="_blank" rel="noopener">Tableau Gallery →</a></p>
+          </div>
+          <div class="card proj">
+            <h3>Excel Case Studies</h3>
+            <p>What-if analysis, pivot automation, and clean financial modeling in Excel.</p>
+            <p><a href="https://github.com/Ashish5991/Excel-case-study-" target="_blank" rel="noopener">Repository →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="card">
+        <h2>News</h2>
+        <ul>
+          <li>Jul 2025 — Working on Financial Analytics coursework & dashboards.</li>
+          <li>Jun 2025 — Exploring BI roles and remote opportunities.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="card">
+        <h2>Publications</h2>
+        <p class="muted">Coming soon. Add papers, talks, or posts here when ready.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="card">
+        <h2>Teaching & Mentoring</h2>
+        <p class="muted">Mention tutoring, mentoring juniors, or any TA roles here.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="card">
+        <h2>Contact</h2>
+        <p>📧 <a href="mailto:ashishkushwahasyr@gmail.com">ashishkushwahasyr@gmail.com</a></p>
+        <p>🔗 <a href="https://github.com/Ashish5991?tab=repositories" target="_blank" rel="noopener">GitHub</a> ·
+               <a href="https://https://www.linkedin.com/in/aashishkushwaha/" target="_blank" rel="noopener">LinkedIn</a></p>
+      </div>
+    </section>
+
+    <footer>© 2025 Ashish Kushwaha</footer>
+  </div>
+</body>
+</html>
